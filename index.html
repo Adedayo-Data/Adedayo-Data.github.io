@@ -169,9 +169,11 @@
                         <div class="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
                             <div class="absolute inset-0 rounded-3xl border border-white/10 rotate-6 glass"></div>
                             <div class="absolute inset-0 rounded-3xl border border-emerald-500/20 -rotate-3 glass"></div>
-                            <div class="absolute inset-0 rounded-3xl overflow-hidden bg-slate-800 border border-white/5 shadow-2xl">
-                                <!-- User Photo -->
-                                <img src="https://res.cloudinary.com/drzcrx4he/image/upload/v1774608156/Dayo_zucscm.png" alt="Adedayo Adedeji Theophilus" class="w-full h-full object-cover" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Adedayo&backgroundColor=0f172a'">
+                           <div class="absolute inset-0 rounded-3xl overflow-hidden bg-slate-800 border border-white/5 shadow-2xl">
+                                <img src="https://res.cloudinary.com/drzcrx4he/image/upload/v1774608156/Dayo_zucscm.png" 
+                                     alt="Adedayo Adedeji Theophilus" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Adedayo+Adedeji&background=10b981&color=fff&size=512'">
                             </div>
                         </div>
                     </div>
@@ -258,22 +260,31 @@
 
                     <!-- Avaprim -->
                     <div class="glass-card rounded-3xl overflow-hidden flex flex-col reveal" style="transition-delay: 0.3s;">
-                        <div class="relative h-56 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center group">
-                            <svg class="text-emerald-400/50 group-hover:scale-110 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                        <div class="relative h-56 flex items-center justify-center group overflow-hidden">
+                            <img src="https://res.cloudinary.com/drzcrx4he/image/upload/v1774609097/2f4c89be-94d0-4350-b8f3-dbbd932e6e3d.png" 
+                                 alt="Avaprim Beans Flour Packaging" 
+                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+                            
                             <div class="absolute bottom-4 left-4 flex gap-2">
-                                <span class="tag">Founder</span>
-                                <span class="tag">Product Lead</span>
+                                <span class="tag bg-emerald-500 text-slate-950 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Founder</span>
+                                <span class="tag bg-cyan-500 text-slate-950 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Product Lead</span>
                             </div>
                         </div>
+                        
                         <div class="p-8 flex flex-col flex-1">
-                            <h3 class="text-2xl font-bold text-white mb-3">Avaprim</h3>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Avaprim</h3>
                             <p class="text-slate-400 mb-6 text-sm leading-relaxed flex-1">
-                                Launched a consumer food brand (Beans Flour) in the Nigerian market. Managed the full lifecycle from supply chain sourcing to brand identity and packaging design.
+                                Launched a consumer food brand (**Beans Flour**) in the Nigerian market. 
+                                Managed the full lifecycle from supply chain sourcing to brand identity and packaging design.
                             </p>
-                            <span class="inline-flex items-center text-slate-500 font-bold">
-                                Nigerian Market Focus
-                            </span>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-emerald-400 font-mono text-xs font-bold uppercase tracking-widest">
+                                    Nigerian Market Focus
+                                </span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase tracking-widest">Est. 2024</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,21 +319,26 @@
                         </div>
                     </div>
 
-                    <!-- Food Ordering API -->
+                    <!-- MediMap -->
                     <div class="glass p-8 md:p-10 rounded-3xl border border-white/5 flex flex-col reveal" style="transition-delay: 0.1s;">
                         <div class="flex-1">
                             <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
-                            <h4 class="text-2xl font-bold text-white mb-4">Security & Optimization</h4>
+                            <h4 class="text-2xl font-bold text-white mb-4">MediMap</h4>
                             <p class="text-slate-400 mb-6 leading-relaxed">
-                                Engineered a stateless auth system with <span class="text-cyan-400 font-mono">custom JWT filters</span> in Spring Security. Optimized Hibernate queries to resolve <span class="text-cyan-400 font-mono">N+1 query problems</span>, significantly boosting retrieval performance.
+                                Architected a location-based emergency response system by optimizing 
+                                <span class="text-cyan-400 font-mono">geospatial queries</span>[cite: 28, 29]. 
+                                Engineered efficient indexing to allow users to locate services within a 
+                                <span class="text-cyan-400 font-mono">5km radius instantly</span>, 
+                                solving the critical "time-to-care" gap.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 mt-6">
-                            <span class="tag">Spring Security</span>
-                            <span class="tag">JWT</span>
-                            <span class="tag">Hibernate</span>
+                            <span class="tag bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-mono">Spring Boot</span>
+                            <span class="tag bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-mono">React</span>
+                            <span class="tag bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-mono">Geospatial Queries</span>
+                            <span class="tag bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-mono">PostgreSQL</span>
                         </div>
                     </div>
                 </div>
