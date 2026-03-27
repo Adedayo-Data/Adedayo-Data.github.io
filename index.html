@@ -3,87 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adedayo Adedeji | Backend Developer & Product Builder</title>
+    <title>Adedayo Adedeji | Backend Engineer & Product Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        .card-hover:hover { transform: translateY(-8px); border-color: #10b981; transition: all 0.3s ease; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gradient text-slate-200">
 
-    <header class="max-w-5xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl font-extrabold mb-4">Hi, I'm <span class="gradient-text">Adedayo Adedeji</span></h1>
-        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Backend Developer specializing in Java & Spring Boot. I don't just write software; I ship products with real intent.
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="https://linkedin.com/in/theophilus-adedayo/" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold">LinkedIn</a>
-            <a href="mailto:adedejitheophilus2018@gmail.com" class="border border-gray-300 px-6 py-3 rounded-lg font-bold">Contact Me</a>
+    <nav class="fixed w-full z-50 glass py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter text-gradient">ADEDAYO.DEV</span>
+            <div class="space-x-8 text-sm font-medium hidden md:block">
+                <a href="#work" class="hover:text-emerald-400">Work</a>
+                <a href="#depth" class="hover:text-emerald-400">Engineering</a>
+                <a href="#contact" class="bg-emerald-500 text-slate-900 px-4 py-2 rounded-full hover:bg-emerald-400 transition">Let's Talk</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="bg-white py-16">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-6">Developer Experience</h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                I am a Backend Developer focused on building high-availability systems and scalable API architectures[cite: 6, 7]. Currently at <strong>Emerj (Inventrix)</strong>, I contribute to system architecture for SME inventory management platforms[cite: 14, 17]. I prioritize 100% uptime and performance tuning to deliver production-ready software[cite: 40, 41].
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8 relative inline-block">
+                <div class="w-32 h-32 rounded-full border-4 border-emerald-500/30 p-1 mx-auto overflow-hidden">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Adedayo" alt="Adedayo Adedeji" class="w-full h-full object-cover rounded-full bg-slate-800">
+                </div>
+                <span class="absolute bottom-2 right-2 bg-emerald-500 w-5 h-5 rounded-full border-4 border-slate-900 shadow-lg"></span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Backend Engineer <br><span class="text-gradient">& Product Builder</span>
+            </h1>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                "I don't just write software, I ship products with real intent."
+                Specializing in **Java & Spring Boot** high-availability systems. [cite: 4, 10]
             </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#work" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition">View My Work</a>
+                <a href="https://github.com/Adedayo-Data" class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">GitHub Profile</a>
+            </div>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold mb-10 text-center">Featured Products</h2>
+    <section id="work" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Featured Products</h2>
+                <p class="text-slate-400">Production-ready solutions with validated impact.</p>
+            </div>
+            <div class="text-emerald-400 font-mono text-sm hidden md:block">// BUILD_TO_SCALE</div>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="card bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <img src="https://github.com/user-attachments/assets/0879ab78-9529-456b-b430-bf0acb4c83b4" alt="MyMemori" class="rounded-lg mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-bold mb-2">MyMemori | Co-Founder</h3>
-                <p class="text-gray-600 mb-4">Photo-sharing platform serving 100+ users at live events with zero downtime. [cite: 22]</p>
-                <span class="text-blue-600 font-semibold">Spring Boot • PostgreSQL • Progressive Auth</span>
+            <div class="glass p-4 rounded-3xl card-hover">
+                <div class="rounded-2xl overflow-hidden mb-6 h-64 bg-slate-800">
+                    <img src="https://github.com/user-attachments/assets/0879ab78-9529-456b-b430-bf0acb4c83b4" alt="MyMemori App" class="w-full h-full object-cover">
+                </div>
+                <div class="px-2">
+                    <h3 class="text-2xl font-bold mb-2">MyMemori</h3>
+                    <p class="text-slate-400 mb-6 text-sm">Served 100+ users at live events with zero downtime. Engineered progressive auth to eliminate onboarding friction. [cite: 6, 22]</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-emerald-400 text-xs font-mono uppercase tracking-widest">Spring Boot • PostgreSQL</span>
+                        <a href="https://mymemori.site/" class="text-white border-b border-emerald-500 pb-1 text-sm hover:text-emerald-400 transition">Live Demo →</a>
+                    </div>
+                </div>
             </div>
-            <div class="card bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <img src="https://github.com/user-attachments/assets/7a1e69b3-cf58-46cf-9d37-1deea825311d" alt="Ramy Joo" class="rounded-lg mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-bold mb-2">Ramy Joo Apparel</h3>
-                <p class="text-gray-600 mb-4">E-commerce platform optimized for 40% faster page loads via media optimization. [cite: 30, 31]</p>
-                <span class="text-blue-600 font-semibold">Cloudinary • Media Optimization • UX</span>
-            </div>
-        </div>
-    </section>
 
-    <section class="bg-gray-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10 text-center">Engineering Depth</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">📍 MediMap Architect</h3>
-                    <p class="text-gray-400">Optimized geospatial queries for emergency services within a 5km radius instantly. [cite: 28, 29]</p>
+            <div class="glass p-4 rounded-3xl card-hover">
+                <div class="rounded-2xl overflow-hidden mb-6 h-64 bg-slate-800">
+                    <img src="https://github.com/user-attachments/assets/7a1e69b3-cf58-46cf-9d37-1deea825311d" alt="Ramy Joo Apparel" class="w-full h-full object-cover">
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">🏢 Event Management System</h3>
-                    <p class="text-gray-400">Implemented rigorous database locking to prevent double-reservations during peak periods. [cite: 62, 63]</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">🛡️ Security & Microservices</h3>
-                    <p class="text-gray-400">Led a team of 4 at HNG to engineer distributed microservices and custom JWT filters. [cite: 34, 36, 66]</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">📦 Avaprim (Product Lead)</h3>
-                    <p class="text-gray-400">Launched a consumer goods brand, handling everything from supply chain to brand design. [cite: 42, 44]</p>
+                <div class="px-2">
+                    <h3 class="text-2xl font-bold mb-2">Ramy Joo Apparel</h3>
+                    <p class="text-slate-400 mb-6 text-sm">Reduced page load latency by 40% through Cloudinary media optimization. Improved retention for high-traffic E-commerce. [cite: 30, 31]</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-emerald-400 text-xs font-mono uppercase tracking-widest">Media Opt • UX Flow</span>
+                        <a href="https://ramyjooapparel.com/" class="text-white border-b border-emerald-500 pb-1 text-sm hover:text-emerald-400 transition">Live Demo →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 class="text-3xl font-bold mb-6">Speaking & Mentorship</h2>
-        <p class="text-lg text-gray-600 mb-4">
-            <strong>Co-Instructor | Nigeria 3MTT:</strong> Instructed a cohort on Python and SQL logic, breaking down complex computer science concepts into practical examples. [cite: 57, 58]
-        </p>
+    <section id="depth" class="bg-slate-900/50 py-24 px-6 border-y border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-16 text-center">Engineering <span class="text-emerald-400">Deep Dive</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-emerald-500 mb-4 text-3xl font-bold">01</div>
+                    <h3 class="text-xl font-bold mb-3">📍 MediMap Architecture</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Optimized geospatial queries to locate emergency services within 5km instantly. Solved the "time-to-care" problem with efficient indexing. [cite: 28, 29]</p>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-emerald-500 mb-4 text-3xl font-bold">02</div>
+                    <h3 class="text-xl font-bold mb-3">🏢 Distributed Systems</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Led a team of 4 at HNG to architect microservices with 100% uptime. Engineered robust Notification services via Email/SMS. [cite: 36, 38]</p>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-emerald-500 mb-4 text-3xl font-bold">03</div>
+                    <h3 class="text-xl font-bold mb-3">🔒 Security & Locking</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Implemented database locking strategies in rental systems to prevent double-reservations. Engineered custom JWT stateless auth. [cite: 63, 66]</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-white py-10 border-t border-gray-200 text-center">
-        <p class="text-gray-500 mb-2">Based in Kaduna, Nigeria [cite: 71]</p>
-        <p class="text-sm text-gray-400">Media Director & Keyboardist</p>
+    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <div class="glass p-12 rounded-3xl border-emerald-500/20">
+            <h2 class="text-3xl font-bold mb-6">Teaching & Mentorship</h2>
+            <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                Beyond code, I translate technical insights for business stakeholders. Served as a **Co-Instructor for Nigeria 3MTT**, mentoring students through Python and SQL logic. [cite: 56, 57]
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-mono text-emerald-400">
+                <span>#PYTHON_MENTOR</span>
+                <span>#MATH_TEACHER</span>
+                <span>#CHOIR_MEDIA_DIRECTOR</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="pb-20 pt-10 px-6 text-center border-t border-white/5">
+        <div class="max-w-xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 italic text-slate-400 italic">"Engineering is a tool to solve user problems and drive business revenue." [cite: 47]</h2>
+            <div class="flex flex-col items-center gap-6">
+                <a href="mailto:adedejitheophilus2018@gmail.com" class="text-3xl font-bold hover:text-emerald-400 transition break-all">adedejitheophilus2018@gmail.com</a>
+                <div class="flex gap-8 text-slate-500">
+                    <a href="https://linkedin.com/in/theophilus-adedayo/" class="hover:text-white transition">LinkedIn</a>
+                    <a href="https://github.com/Adedayo-Data" class="hover:text-white transition">GitHub</a>
+                    <span>Kaduna, Nigeria</span>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
