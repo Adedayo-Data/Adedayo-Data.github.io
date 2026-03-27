@@ -1,146 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adedayo Adedeji | Backend Engineer & Product Builder</title>
+    <title>Adedayo Adedeji Theophilus | Backend Engineer & Product Builder</title>
+    <meta name="description" content="Portfolio of Adedayo Adedeji Theophilus, a Backend Engineer specializing in Java, Spring Boot, and high-availability distributed systems.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .text-gradient { background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-        .card-hover:hover { transform: translateY(-8px); border-color: #10b981; transition: all 0.3s ease; }
+        body {
+            background-color: #020617;
+            color: #f1f5f9;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(52, 211, 153, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-gradient-emerald {
+            background: linear-gradient(to right, #34d399, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tag {
+            @apply px-3 py-1 rounded-full text-xs font-mono font-medium;
+            background: rgba(52, 211, 153, 0.1);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-gradient text-slate-200">
+<body class="font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-400">
 
-    <nav class="fixed w-full z-50 glass py-4">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tighter text-gradient">ADEDAYO.DEV</span>
-            <div class="space-x-8 text-sm font-medium hidden md:block">
-                <a href="#work" class="hover:text-emerald-400">Work</a>
-                <a href="#depth" class="hover:text-emerald-400">Engineering</a>
-                <a href="#contact" class="bg-emerald-500 text-slate-900 px-4 py-2 rounded-full hover:bg-emerald-400 transition">Let's Talk</a>
+    <!-- Header / Nav -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tighter text-white group">
+                <span class="text-emerald-400">DAYO</span>.DEV
+                <span class="block h-0.5 w-0 group-hover:w-full bg-emerald-400 transition-all duration-300"></span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+                <a href="#products" class="hover:text-emerald-400 transition-colors">Products</a>
+                <a href="#engineering" class="hover:text-emerald-400 transition-colors">Engineering</a>
+                <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+                <a href="#contact" class="px-5 py-2.5 bg-emerald-500 text-dark-950 rounded-lg font-bold hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20">
+                    Connect
+                </a>
             </div>
+
+            <button class="md:hidden text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-8 relative inline-block">
-                <div class="w-32 h-32 rounded-full border-4 border-emerald-500/30 p-1 mx-auto overflow-hidden">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Adedayo" alt="Adedayo Adedeji" class="w-full h-full object-cover rounded-full bg-slate-800">
-                </div>
-                <span class="absolute bottom-2 right-2 bg-emerald-500 w-5 h-5 rounded-full border-4 border-slate-900 shadow-lg"></span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                Backend Engineer <br><span class="text-gradient">& Product Builder</span>
-            </h1>
-            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                "I don't just write software, I ship products with real intent."
-                Specializing in **Java & Spring Boot** high-availability systems. [cite: 4, 10]
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#work" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition">View My Work</a>
-                <a href="https://github.com/Adedayo-Data" class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">GitHub Profile</a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-40 pb-20 px-6 overflow-hidden">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
 
-    <section id="work" class="max-w-6xl mx-auto px-6 py-24">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h2 class="text-3xl font-bold mb-2">Featured Products</h2>
-                <p class="text-slate-400">Production-ready solutions with validated impact.</p>
-            </div>
-            <div class="text-emerald-400 font-mono text-sm hidden md:block">// BUILD_TO_SCALE</div>
-        </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-6 reveal">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            OPEN TO INNOVATIVE PROJECTS
+                        </div>
+                        
+                        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.1] reveal" style="transition-delay: 0.1s;">
+                            Software Developer & <br>
+                            <span class="text-gradient-emerald">Product Builder.</span>
+                        </h1>
+                        
+                        <p class="text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed reveal" style="transition-delay: 0.2s;">
+                            "I solve user problems and ship production-ready solutions." <br class="hidden md:block">
+                            Backend Engineer specializing in <span class="text-emerald-400 font-semibold">Java & Spring Boot</span> high-availability systems with a "Ship or Sink" mindset.
+                        </p>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass p-4 rounded-3xl card-hover">
-                <div class="rounded-2xl overflow-hidden mb-6 h-64 bg-slate-800">
-                    <img src="https://github.com/user-attachments/assets/0879ab78-9529-456b-b430-bf0acb4c83b4" alt="MyMemori App" class="w-full h-full object-cover">
-                </div>
-                <div class="px-2">
-                    <h3 class="text-2xl font-bold mb-2">MyMemori</h3>
-                    <p class="text-slate-400 mb-6 text-sm">Served 100+ users at live events with zero downtime. Engineered progressive auth to eliminate onboarding friction. [cite: 6, 22]</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-emerald-400 text-xs font-mono uppercase tracking-widest">Spring Boot • PostgreSQL</span>
-                        <a href="https://mymemori.site/" class="text-white border-b border-emerald-500 pb-1 text-sm hover:text-emerald-400 transition">Live Demo →</a>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 reveal" style="transition-delay: 0.3s;">
+                            <a href="#products" class="px-8 py-4 bg-white text-dark-950 rounded-xl font-bold hover:bg-emerald-400 transition-all shadow-xl">
+                                Explore Products
+                            </a>
+                            <a href="#contact" class="px-8 py-4 glass text-white rounded-xl font-bold hover:bg-white/5 transition-all">
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 relative reveal" style="transition-delay: 0.4s;">
+                        <div class="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
+                            <div class="absolute inset-0 rounded-3xl border border-white/10 rotate-6 glass"></div>
+                            <div class="absolute inset-0 rounded-3xl border border-emerald-500/20 -rotate-3 glass"></div>
+                            <div class="absolute inset-0 rounded-3xl overflow-hidden bg-slate-800 border border-white/5 shadow-2xl">
+                                <!-- User Photo -->
+                                <img src="https://github.com/Adedayo-Data/Adedayo-Data.github.io/raw/main/dayo_photo.png" alt="Adedayo Adedeji Theophilus" class="w-full h-full object-cover" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Adedayo&backgroundColor=0f172a'">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="glass p-4 rounded-3xl card-hover">
-                <div class="rounded-2xl overflow-hidden mb-6 h-64 bg-slate-800">
-                    <img src="https://github.com/user-attachments/assets/7a1e69b3-cf58-46cf-9d37-1deea825311d" alt="Ramy Joo Apparel" class="w-full h-full object-cover">
-                </div>
-                <div class="px-2">
-                    <h3 class="text-2xl font-bold mb-2">Ramy Joo Apparel</h3>
-                    <p class="text-slate-400 mb-6 text-sm">Reduced page load latency by 40% through Cloudinary media optimization. Improved retention for high-traffic E-commerce. [cite: 30, 31]</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-emerald-400 text-xs font-mono uppercase tracking-widest">Media Opt • UX Flow</span>
-                        <a href="https://ramyjooapparel.com/" class="text-white border-b border-emerald-500 pb-1 text-sm hover:text-emerald-400 transition">Live Demo →</a>
+        <!-- Current Mission -->
+        <section id="about" class="py-12 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass p-8 md:p-12 rounded-3xl border border-emerald-500/10 reveal">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-2">Current Mission</h2>
+                            <p class="text-xl md:text-2xl text-slate-200 leading-relaxed">
+                                Currently engineering at <span class="text-white font-bold">Emerj (Inventrix)</span>, collaborating on system architecture and API development for mission-critical SME inventory management platforms.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="depth" class="bg-slate-900/50 py-24 px-6 border-y border-white/5">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-extrabold mb-16 text-center">Engineering <span class="text-emerald-400">Deep Dive</span></h2>
+        <!-- Product Builder Section -->
+        <section id="products" class="py-24 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4 reveal">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Product Builder</h2>
+                        <p class="text-slate-400 text-lg max-w-xl">I bridge the gap between technical complexity and user-centric value.</p>
+                    </div>
+                    <div class="text-emerald-400 font-mono text-sm tracking-tighter hidden md:block">
+                        // VALIDATED_IMPACT
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- MyMemori -->
+                    <div class="glass-card rounded-3xl overflow-hidden flex flex-col reveal" style="transition-delay: 0.1s;">
+                        <div class="relative h-56 overflow-hidden group">
+                            <img src="https://github.com/user-attachments/assets/0879ab78-9529-456b-b430-bf0acb4c83b4" alt="MyMemori" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="tag">100+ Users</span>
+                                <span class="tag">500+ Photos</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">MyMemori</h3>
+                            <p class="text-slate-400 mb-6 text-sm leading-relaxed flex-1">
+                                <b>Co-Founder & Backend Lead.</b> Shipped a photo-sharing app used at 3 live events with zero downtime. Engineered progressive auth to eliminate onboarding friction while preserving user state.
+                            </p>
+                            <a href="https://mymemori.site/" target="_blank" class="inline-flex items-center text-emerald-400 font-bold group">
+                                Visit Site 
+                                <svg class="ml-2 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ramy Joo Apparel -->
+                    <div class="glass-card rounded-3xl overflow-hidden flex flex-col reveal" style="transition-delay: 0.2s;">
+                        <div class="relative h-56 overflow-hidden group flex">
+                            <img src="https://github.com/user-attachments/assets/7a1e69b3-cf58-46cf-9d37-1deea825311d" alt="Ramy Joo 1" class="w-1/2 h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://github.com/user-attachments/assets/af2e87d4-57be-46cd-a94c-2178c271e414" alt="Ramy Joo 2" class="w-1/2 h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="tag">40% Latency Reduction</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">Ramy Joo Apparel</h3>
+                            <p class="text-slate-400 mb-6 text-sm leading-relaxed flex-1">
+                                High-performance e-commerce platform. Integrated Cloudinary for media optimization, reducing latency by 40% and directly improving user retention.
+                            </p>
+                            <a href="https://ramyjooapparel.com/" target="_blank" class="inline-flex items-center text-emerald-400 font-bold group">
+                                Visit Site 
+                                <svg class="ml-2 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Avaprim -->
+                    <div class="glass-card rounded-3xl overflow-hidden flex flex-col reveal" style="transition-delay: 0.3s;">
+                        <div class="relative h-56 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center group">
+                            <svg class="text-emerald-400/50 group-hover:scale-110 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="tag">Founder</span>
+                                <span class="tag">Product Lead</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">Avaprim</h3>
+                            <p class="text-slate-400 mb-6 text-sm leading-relaxed flex-1">
+                                Launched a consumer food brand (Beans Flour) in the Nigerian market. Managed the full lifecycle from supply chain sourcing to brand identity and packaging design.
+                            </p>
+                            <span class="inline-flex items-center text-slate-500 font-bold">
+                                Nigerian Market Focus
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engineering Depth -->
+        <section id="engineering" class="py-24 px-6 bg-slate-950/50 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px]"></div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-emerald-500 mb-4 text-3xl font-bold">01</div>
-                    <h3 class="text-xl font-bold mb-3">📍 MediMap Architecture</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Optimized geospatial queries to locate emergency services within 5km instantly. Solved the "time-to-care" problem with efficient indexing. [cite: 28, 29]</p>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20 reveal">
+                    <h2 class="text-sm font-mono text-emerald-400 uppercase tracking-[0.3em] mb-4">Technical Prowess</h2>
+                    <h3 class="text-4xl md:text-5xl font-extrabold text-white">Engineering Depth</h3>
                 </div>
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-emerald-500 mb-4 text-3xl font-bold">02</div>
-                    <h3 class="text-xl font-bold mb-3">🏢 Distributed Systems</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Led a team of 4 at HNG to architect microservices with 100% uptime. Engineered robust Notification services via Email/SMS. [cite: 36, 38]</p>
-                </div>
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-emerald-500 mb-4 text-3xl font-bold">03</div>
-                    <h3 class="text-xl font-bold mb-3">🔒 Security & Locking</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Implemented database locking strategies in rental systems to prevent double-reservations. Engineered custom JWT stateless auth. [cite: 63, 66]</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-        <div class="glass p-12 rounded-3xl border-emerald-500/20">
-            <h2 class="text-3xl font-bold mb-6">Teaching & Mentorship</h2>
-            <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                Beyond code, I translate technical insights for business stakeholders. Served as a **Co-Instructor for Nigeria 3MTT**, mentoring students through Python and SQL logic. [cite: 56, 57]
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 text-sm font-mono text-emerald-400">
-                <span>#PYTHON_MENTOR</span>
-                <span>#MATH_TEACHER</span>
-                <span>#CHOIR_MEDIA_DIRECTOR</span>
-            </div>
-        </div>
-    </section>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Event Rental System -->
+                    <div class="glass p-8 md:p-10 rounded-3xl border border-white/5 reveal">
+                        <div class="flex gap-4 mb-8 overflow-hidden rounded-2xl h-48">
+                            <img src="https://github.com/user-attachments/assets/3a59c0c8-93d1-4c16-8f08-56e06eb457ba" alt="Event Rental 1" class="w-1/2 h-full object-cover">
+                            <img src="https://github.com/user-attachments/assets/276f3256-2cbd-4de3-9bad-81cf41117bf2" alt="Event Rental 2" class="w-1/2 h-full object-cover">
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Event Rental Management</h4>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Designed a backend API to solve inventory over-booking. Implemented <span class="text-cyan-400 font-mono">rigorous database locking strategies</span> and a complex relational schema to ensure data integrity during peak demand.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
 
-    <footer id="contact" class="pb-20 pt-10 px-6 text-center border-t border-white/5">
-        <div class="max-w-xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 italic text-slate-400 italic">"Engineering is a tool to solve user problems and drive business revenue." [cite: 47]</h2>
-            <div class="flex flex-col items-center gap-6">
-                <a href="mailto:adedejitheophilus2018@gmail.com" class="text-3xl font-bold hover:text-emerald-400 transition break-all">adedejitheophilus2018@gmail.com</a>
-                <div class="flex gap-8 text-slate-500">
-                    <a href="https://linkedin.com/in/theophilus-adedayo/" class="hover:text-white transition">LinkedIn</a>
-                    <a href="https://github.com/Adedayo-Data" class="hover:text-white transition">GitHub</a>
-                    <span>Kaduna, Nigeria</span>
+                    <!-- Food Ordering API -->
+                    <div class="glass p-8 md:p-10 rounded-3xl border border-white/5 flex flex-col reveal" style="transition-delay: 0.1s;">
+                        <div class="flex-1">
+                            <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-4">Security & Optimization</h4>
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Engineered a stateless auth system with <span class="text-cyan-400 font-mono">custom JWT filters</span> in Spring Security. Optimized Hibernate queries to resolve <span class="text-cyan-400 font-mono">N+1 query problems</span>, significantly boosting retrieval performance.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="tag">Spring Security</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">Hibernate</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience" class="py-24 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-white mb-16 reveal">Professional Experience</h2>
+                
+                <div class="space-y-12">
+                    <!-- HNG -->
+                    <div class="relative pl-8 border-l border-emerald-500/30 reveal">
+                        <div class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-emerald-500 glow-emerald"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-white">Team Lead | HNG Internship</h3>
+                            <span class="text-emerald-400 font-mono text-sm">Oct 2025 - Dec 2025</span>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-4">
+                            Led a team of 4 developers in architecting a distributed microservices system. Engineered a robust <span class="text-white">Notification Microservice</span> for Email/SMS, maintaining 100% uptime during evaluation stages.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">Microservices</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Technical Leadership</span>
+                        </div>
+                    </div>
+
+                    <!-- GreenTree -->
+                    <div class="relative pl-8 border-l border-emerald-500/30 reveal" style="transition-delay: 0.1s;">
+                        <div class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-emerald-500 glow-emerald"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-white">Data Automation Analyst | GreenTree Capital</h3>
+                            <span class="text-emerald-400 font-mono text-sm">June 2024 - Dec 2024</span>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-4">
+                            Engineered an automated workflow reducing administrative overhead by 30%. Built <span class="text-white">dynamic Power BI dashboards</span> for real-time KPI tracking, bridging the gap between technical and business stakeholders.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">Power Automate</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Data Insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentorship & Education -->
+        <section id="mentorship" class="py-24 px-6 relative bg-slate-950/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Education -->
+                    <div class="glass p-8 md:p-12 rounded-[2.5rem] border border-white/5 reveal">
+                        <h2 class="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-4">Academic Background</h2>
+                        <h3 class="text-3xl font-extrabold text-white mb-6">Education</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Kaduna Polytechnic</h4>
+                                <p class="text-slate-400">HND Computer Science</p>
+                                <p class="text-emerald-400 font-mono text-sm">2023 - 2025</p>
+                                <p class="text-slate-500 text-sm mt-2 italic">Focus: Software Engineering, Advanced Java, System Design.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mentorship -->
+                    <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 p-8 md:p-12 rounded-[2.5rem] border border-emerald-500/20 reveal" style="transition-delay: 0.1s;">
+                        <h2 class="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-4">Community</h2>
+                        <h3 class="text-3xl font-extrabold text-white mb-6">Mentorship</h3>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            <b>Co-Instructor at Nigeria 3MTT.</b> Instructed a cohort on Python and SQL logic, breaking down abstract concepts into practical examples. Mentored students through debugging sessions and stack trace analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL Logic</span>
+                            <span class="tag">Technical Mentoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Footer -->
+        <section class="py-20 px-6 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 hover:opacity-100 transition-opacity">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Backend</span>
+                        <span class="text-xl font-bold text-white">Java / Spring Boot</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Database</span>
+                        <span class="text-xl font-bold text-white">PostgreSQL / MySQL</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Infrastructure</span>
+                        <span class="text-xl font-bold text-white">Docker / Linux</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Tools</span>
+                        <span class="text-xl font-bold text-white">Git / Maven / Postman</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Automation</span>
+                        <span class="text-xl font-bold text-white">CI/CD / Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 reveal">Let's build with <span class="text-gradient-emerald">intent.</span></h2>
+                <p class="text-xl text-slate-400 mb-12 reveal" style="transition-delay: 0.1s;">
+                    Whether you have a product idea or need a backend expert to scale your system, let's talk.
+                </p>
+                
+                <div class="flex flex-col items-center gap-8 reveal" style="transition-delay: 0.2s;">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6 w-full">
+                        <a href="mailto:adedejitheophilus2018@gmail.com" class="w-full md:w-auto px-10 py-5 bg-emerald-500 text-dark-950 rounded-2xl font-bold text-lg hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20">
+                            Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/theophilus-adedayo/" target="_blank" class="w-full md:w-auto px-10 py-5 glass text-white rounded-2xl font-bold text-lg hover:bg-white/5 transition-all flex items-center justify-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div class="text-slate-400 font-mono">
+                        <span class="text-emerald-400">+234</span> 903 973 4698
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-white/5 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto">
+            <p>© 2026 Adedayo Adedeji Theophilus. Built with precision and intent.</p>
         </div>
     </footer>
 
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
